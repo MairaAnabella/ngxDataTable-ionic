@@ -11,6 +11,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  
+  {
+    path: 'inline-edit',
+    loadChildren: () => import('./inline-edit/inline-edit.module').then( m => m.InlineEditPageModule)
+  },
 ];
 
 @NgModule({
