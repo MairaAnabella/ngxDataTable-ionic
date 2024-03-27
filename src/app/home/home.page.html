@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h3>
+      Client-side Search and Filtering
+    </h3>
+    <!-- Aquí agregamos el componente de filtro -->
+    <app-filter (filterChange)="updateFilter($event)"></app-filter>
+    <ngx-datatable
+    #table
+    class="material"
+    style="width: 35%;"
+    [columns]="columns"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    rowHeight="auto"
+    [limit]="10"
+    [rows]="filteredRows"> </ngx-datatable>
+  
+  </div>
+</ion-content>
